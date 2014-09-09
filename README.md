@@ -24,3 +24,6 @@ end
 ```
 
 The first portion of the triplet is the status code, `200`.
+
+### Resources
+- [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
