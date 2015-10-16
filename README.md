@@ -5,8 +5,8 @@ Status codes are a integral component of a server response. They are a 3-digit i
 ### Status Code Chart
 Status Number | Code/Description
 --|--------------------------
-1             | 1xx: Informational (request recieved and continuing process)
-2             | 2xx: Success (request successfully recieved, understood, and accepted)
+1             | 1xx: Informational (request received and continuing process)
+2             | 2xx: Success (request successfully received, understood, and accepted)
 3             | 3xx: Redirection (further action must be taken to complete request)
 4             | 4xx: Client Error (request contains bad syntax and can't be completed)
 5             | 5xx: Server Error (server couldn't complete request)
