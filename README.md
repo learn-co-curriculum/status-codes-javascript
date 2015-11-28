@@ -16,7 +16,7 @@ You've seen a bunch of these before. The most common being `404`. This means tha
 
 ### Relation to Rack
 
-In Rack, we are able to set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of `200`. But when a user selects a route that doesn't exist, we need to set the `status_code` to `404`. 
+In Rack, we are able to set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of `200`. But when a user selects a route that doesn't exist, we need to set the `status` to `404`. 
 
 ```ruby
 class Application
@@ -29,7 +29,7 @@ class Application
       resp.write "You requested the songs"
     else
       resp.write "Route not found"
-      resp.status_code = 404
+      resp.status = 404
     end
 
     resp.finish
