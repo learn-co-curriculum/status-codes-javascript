@@ -1,30 +1,45 @@
 # Status Codes
 
-Status codes are a integral component of a server response. They are a 3-digit integer where the first digit represents the class of the response, and the remaining two digits represent a specific status. There are 5 primary values for the first digit.
+Status Codes allow your server to tell something special to the client. The responses you send, needs to be effective to both a human user, and to the browser itself. That means while you are used to sending in the response messages like `File Not Found` or `Item isn't in the cart` those only work if there is a human to read the English. Browsers also want to know the status of the response. To get that response, the HTTP protocol has an agreed upon contract for different "status codes". A status code is a 3-digit integer where the first digit represents the class of the response, and the remaining two digits represent a specific status. There are 5 primary values for the first digit.  
 
 ### Status Code Chart
 
 Status Number | Code/Description
 --------------|--------------------------
 1             | 1xx: Informational (request received and continuing process)
-2             | 2xx: Success (request successfully recieved, understood, and accepted)
+2             | 2xx: Success (request successfully received, understood, and accepted)
 3             | 3xx: Redirection (further action must be taken to complete request)
 4             | 4xx: Client Error (request contains bad syntax and can't be completed)
 5             | 5xx: Server Error (server couldn't complete request)
 
+You've seen a bunch of these before. The most common being `404`. This means that the server couldn't find the route you requested.
+
 ### Relation to Rack
 
-In Rack, a status code makes up the first component of the `triplet`, which is the Rack application response that contains the status code, headers, and body. Rack applications are objects that respond to a `call` method. The returned object must be a `triplet`. For example, this is what a triplet looks like:
+In Rack, we are able to set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of `200`. But when a user selects a route that doesn't exist, we need to set the `status_code` to `404`. 
 
 ```ruby
-class HelloWorld
-  def response
-    [200, {}, 'Hello World']
+class Application
+  
+  def call(env)
+    resp = Rack::Response.new
+    req = Rack::Request.new(env)
+
+    if req.path=="/songs"
+      resp.write "You requested the songs"
+    else
+      resp.write "Route not found"
+      resp.status_code = 404
+    end
+
+    resp.finish
   end
 end
 ```
 
-The first portion of the triplet is the status code, `200`.
+Now if you go to `localhost:9292/badURL` you'll get the error message, and if you open up the Inspect Element navigator you'll see something like this:
+
+![](http://readme-pics.s3.amazonaws.com/rack-status-codes-readme/image1.png)
 
 ### Resources
 - [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
