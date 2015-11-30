@@ -1,6 +1,15 @@
-# Status Codes
+# HTTP Status Codes
 
-Status Codes allow your server to tell something special to the client. The responses you send, needs to be effective to both a human user, and to the browser itself. That means while you are used to sending in the response messages like `File Not Found` or `Item isn't in the cart` those only work if there is a human to read the English. Browsers also want to know the status of the response. To get that response, the HTTP protocol has an agreed upon contract for different "status codes". A status code is a 3-digit integer where the first digit represents the class of the response, and the remaining two digits represent a specific status. There are 5 primary values for the first digit.  
+## Objectives
+
+1. Define status codes and what they communicate to a client
+2. Describe the structure and various categories of status codes
+3. Set a response's status code in Rack 
+
+
+## Why Status Codes are Important for the Client
+
+Status codes allow your server to tell something special to the client. The responses you send need to be effective to both a human user and to the browser itself. That means that  response messages like `File Not Found` or `Item isn't in the cart` work if there is a human to read the English. Browsers also want to know the status of the response. To get that response, the HTTP protocol has an agreed upon contract for different "status codes". A status code is a 3-digit integer where the first digit represents the class of the response, and the remaining two digits represent a specific status. There are 5 primary values that the first digit can take.  
 
 ### Status Code Chart
 
@@ -12,9 +21,9 @@ Status Number | Code/Description
 4             | 4xx: Client Error (request contains bad syntax and can't be completed)
 5             | 5xx: Server Error (server couldn't complete request)
 
-You've seen a bunch of these before. The most common being `404`. This means that the server couldn't find the route you requested.
+You've probably seen a bunch of these before, the most common being `404`. This means that the server couldn't find the route you requested.
 
-### Relation to Rack
+### Status Codes in Rack
 
 In Rack, we are able to set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of `200`. But when a user selects a route that doesn't exist, we need to set the `status` to `404`. 
 
