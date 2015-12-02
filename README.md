@@ -52,3 +52,5 @@ Now if you go to `localhost:9292/badURL` you'll get the error message, and if yo
 
 ### Resources
 - [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
+
+<a href='https://learn.co/lessons/rack-status-codes-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
