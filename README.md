@@ -50,6 +50,12 @@ Now if you go to `localhost:9292/badURL` you'll get the error message, and if yo
 
 ![](http://readme-pics.s3.amazonaws.com/rack-status-codes-readme/image1.png)
 
+## Video Reviews
+
+* [How the Web Works, Part 1](https://github.com/learn-co-curriculum/rack-video-review-how-the-web-works-pt-1)
+
+* [How the Web Works, Part 2](https://github.com/learn-co-curriculum/rack-video-review-how-the-web-works-pt-2)
+
 ### Resources
 - [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
 
