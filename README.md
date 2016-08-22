@@ -52,11 +52,11 @@ Now if you go to `localhost:9292/badURL` you'll get the error message, and if yo
 
 ## Video Reviews
 
-* [How the Web Works, Part 1](https://github.com/learn-co-curriculum/rack-video-review-how-the-web-works-pt-1)
+* [How the Web Works, Part 1](https://www.youtube.com/watch?v=gI9wqEDPiY0)
 
-* [How the Web Works, Part 2](https://github.com/learn-co-curriculum/rack-video-review-how-the-web-works-pt-2)
+* [How the Web Works, Part 2](https://www.youtube.com/watch?v=LSUevS1PRTg)
 
 ### Resources
-- [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
+* [More on Status Codes](http://www.tutorialspoint.com/http/http_status_codes.htm)
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rack-status-codes-readme' title='HTTP Status Codes'>HTTP Status Codes</a> on Learn.co and start learning to code for free.</p>
