@@ -4,8 +4,6 @@
 
 1. Define status codes and what they communicate to a client
 2. Describe the structure and various categories of status codes
-3. Set a response's status code in Rack 
-
 
 ## Why Status Codes are Important for the Client
 
@@ -22,33 +20,6 @@ Status Number | Code/Description
 5             | 5xx: Server Error (server couldn't complete request)
 
 You've probably seen a bunch of these before, the most common being `404`. This means that the server couldn't find the route you requested.
-
-### Status Codes in Rack
-
-In Rack, we are able to set the response's status code by just setting the status_code attribute. By default, Rack sets a status code of `200`. But when a user selects a route that doesn't exist, we need to set the `status` to `404`. 
-
-```ruby
-class Application
-  
-  def call(env)
-    resp = Rack::Response.new
-    req = Rack::Request.new(env)
-
-    if req.path=="/songs"
-      resp.write "You requested the songs"
-    else
-      resp.write "Route not found"
-      resp.status = 404
-    end
-
-    resp.finish
-  end
-end
-```
-
-Now if you go to `localhost:9292/badURL` you'll get the error message, and if you open up the Inspect Element navigator you'll see something like this:
-
-![](http://readme-pics.s3.amazonaws.com/rack-status-codes-readme/image1.png)
 
 ## Video Reviews
 
